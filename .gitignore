@@ -1,0 +1,7 @@
+# general
+.idea
+.DS_Store
+.vscode
+
+# sensitive data
+clearml/values-prod-sensitive.yaml

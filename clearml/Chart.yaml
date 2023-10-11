@@ -1,0 +1,36 @@
+apiVersion: v2
+name: clearml
+description: MLOps platform
+type: application
+version: "7.4.0"
+appVersion: "1.12.0"
+kubeVersion: ">= 1.21.0-0 < 1.29.0-0"
+home: https://clear.ml
+icon: https://raw.githubusercontent.com/allegroai/clearml/master/docs/clearml-logo.svg
+sources:
+  - https://github.com/allegroai/clearml-helm-charts
+  - https://github.com/allegroai/clearml
+maintainers:
+  - name: valeriano-manassero
+    url: https://github.com/valeriano-manassero
+keywords:
+  - clearml
+  - "machine learning"
+  - mlops
+#dependencies:
+#  - name: redis
+#    version: "17.8.3"
+#    repository: "https://charts.bitnami.com/bitnami"
+#    condition: redis.enabled
+#  - name: mongodb
+#    version: "12.1.31"
+#    repository: "https://charts.bitnami.com/bitnami"
+#    condition: mongodb.enabled
+#  - name: elasticsearch
+#    version: "7.17.3"
+#    repository: "https://helm.elastic.co"
+#    condition: elasticsearch.enabled
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: service accounts for core clearml components

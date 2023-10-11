@@ -1,0 +1,41 @@
+apiserver:
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+fileserver:
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+webserver:
+  service:
+    type: ClusterIP
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+#redis:
+#  architecture: replication
+#  master:
+#    persistence:
+#      enabled: true
+#      accessModes:
+#        - ReadWriteOnce
+#      size: 5Gi
+#      ## If undefined (the default) or set to null, no storageClassName spec is set, choosing the default provisioner
+#      storageClass: "csi-sbercloud-nd"
+#  replica:
+#    replicaCount: 2
+#mongodb:
+#  enabled: true
+#  architecture: replicaset
+#  replicaCount: 2
+#  arbiter:
+#    enabled: false
+#  pdb:
+#    create: true
+#  podAntiAffinityPreset: soft
+#elasticsearch:
+#  replicas: 3
