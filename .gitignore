@@ -4,4 +4,4 @@
 .vscode
 
 # sensitive data
-clearml/values-prod-sensitive.yaml
+*sensitive*
