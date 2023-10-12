@@ -12,15 +12,16 @@
 ```bash
 # local env (without ingress)
 $ helm install clearml ./clearml --namespace=clearml --create-namespace -f ./clearml/values.yaml
+
 # on provider https://cloud.ru/ (without ingress)
 $ helm install clearml ./clearml --namespace=clearml --create-namespace \
                                  -f ./clearml/values.yaml \
-                                 -f ./clearml/values-prod-sensitive.yaml \
                                  --set elasticsearch.volumeClaimTemplate.storageClassName="csi-sbercloud-nd"
+
 # on provider https://cloud.ru/ (WITH ingress)
-# create values file with hosts:
+#   create values file with hosts:
 $ touch ./clearml/values-prod-sensitive.yaml
-# populate file with the following data:
+#   populate file with the following data:
     apiserver:
       ingress:
         hostName: "api.<your domain>"
@@ -34,6 +35,7 @@ $ touch ./clearml/values-prod-sensitive.yaml
 $ helm install clearml ./clearml --namespace=clearml --create-namespace \
                                  -f ./clearml/values.yaml \
                                  -f ./clearml/values-prod.yaml \
+                                 -f ./clearml/values-prod-sensitive.yaml \
                                  --set elasticsearch.volumeClaimTemplate.storageClassName="csi-sbercloud-nd"
 ```
 
